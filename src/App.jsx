@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       {locationFound === true ?
-      <Weather latitude={latitude} longitude={longitude}  /> : ''}
+      <Weather latitude={latitude} longitude={longitude} locationFound={locationFound} /> : ''}
       {/* weather information will only be rendered if user's location has been found */}
     </div>
   )
