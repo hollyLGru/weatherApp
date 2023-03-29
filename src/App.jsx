@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Weather from './Weather'
 import Forms from './Forms'
@@ -7,6 +7,9 @@ function App() {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const [locationFound, setLocationFound] = useState(false)
+  const [weather, setWeatherData] = useState({})
+  const [location, setLocation] = useState({})
+
 
   const options = {
     enableHighAccuracy: true,
@@ -17,8 +20,8 @@ function App() {
   const successCallback = (position) => {
     setLatitude(position.coords.latitude)
     setLongitude(position.coords.longitude)
-    console.log(latitude, longitude)
     setLocationFound(true)
+    console.log(latitude, longitude)
   };
   // we are setting the user's longitutde and latitide with the useState hook if we receive successful callback
   
@@ -29,14 +32,14 @@ function App() {
   
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options)
   // this will retrieve the location of the user. 
-
+  
 
   return (
     <div className="App" style={{backgroundImage: `url(
       https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?cs=srgb&dl=pexels-pixabay-147411.jpg&fm=jpg
     )`, paddingTop: "3%"}}>
       {locationFound === true ?
-      <Weather latitude={latitude} longitude={longitude} locationFound={locationFound} /> : ''}
+      <Weather latitude={latitude} longitude={longitude} locationFound={locationFound} weather={weather} setWeatherData={setWeatherData} location={location} setLocation={setLocation} /> : ''}
       {/* weather information will only be rendered if user's location has been found */}
       <Forms/>
     </div>
