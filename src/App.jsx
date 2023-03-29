@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Weather from './Weather'
+import Forms from './Forms'
 
 function App() {
   const [latitude, setLatitude] = useState('');
@@ -31,10 +32,13 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage: `url(
+      https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?cs=srgb&dl=pexels-pixabay-147411.jpg&fm=jpg
+    )`, paddingTop: "3%"}}>
       {locationFound === true ?
       <Weather latitude={latitude} longitude={longitude} locationFound={locationFound} /> : ''}
       {/* weather information will only be rendered if user's location has been found */}
+      <Forms/>
     </div>
   )
 }
