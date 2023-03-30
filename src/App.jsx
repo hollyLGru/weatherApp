@@ -35,9 +35,7 @@ function App() {
   
 
   return (
-    <div className="App" style={{backgroundImage: `url(
-      https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?cs=srgb&dl=pexels-pixabay-147411.jpg&fm=jpg
-    )`, paddingTop: "3%"}}>
+    <div className="App">
       {locationFound === true ?
       <Weather latitude={latitude} longitude={longitude} locationFound={locationFound} weather={weather} setWeatherData={setWeatherData} location={location} setLocation={setLocation} /> : ''}
       {/* weather information will only be rendered if user's location has been found */}
