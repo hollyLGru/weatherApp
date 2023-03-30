@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Weather from './Weather'
-import Forms from './Forms'
+import Weather from './components/Weather'
+import Forms from './components/Forms'
 
 function App() {
   const [latitude, setLatitude] = useState('');
@@ -39,7 +39,6 @@ function App() {
       {locationFound === true ?
       <Weather latitude={latitude} longitude={longitude} locationFound={locationFound} weather={weather} setWeatherData={setWeatherData} location={location} setLocation={setLocation} /> : ''}
       {/* weather information will only be rendered if user's location has been found */}
-      <Forms/>
     </div>
   )
 }

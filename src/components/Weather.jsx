@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import './App.css';
-import '../backgroundImage.png'
+import '../App.css';
 import Desktop from './Desktop'
 
 function Weather({latitude, longitude, locationFound,setWeatherData, setLocation, weather, location}) {
@@ -28,7 +27,7 @@ function Weather({latitude, longitude, locationFound,setWeatherData, setLocation
 
 
   return (
-    <div>{updated == true ? 
+    <div className="Weather">{updated == true ? 
         <Desktop latitude={latitude} longitude={longitude} locationFound={locationFound} weather={weather} setWeatherData={setWeatherData} location={location} setLocation={setLocation}/>
     : ""}</div>
   )
