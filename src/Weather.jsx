@@ -20,7 +20,7 @@ function Weather({latitude, longitude, locationFound,setWeatherData, setLocation
           const data = await response.json();
           setWeatherData(data.current);
           setLocation(data.location)
-          console.log(weather)
+          console.log(location, weather)
           setUpdated(true)
       };
           fetchData();
