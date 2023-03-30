@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Weather from './components/Weather'
-import Forms from './components/Forms'
 
 function App() {
   const [latitude, setLatitude] = useState('');
@@ -21,7 +20,6 @@ function App() {
     setLatitude(position.coords.latitude)
     setLongitude(position.coords.longitude)
     setLocationFound(true)
-    console.log(latitude, longitude)
   };
   // we are setting the user's longitutde and latitide with the useState hook if we receive successful callback
   

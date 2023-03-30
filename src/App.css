@@ -16,7 +16,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 95%;
-  height: 800px;
+  height: 700px;
   font-family: 'Roboto', sans-serif; 
 }
 
@@ -69,6 +69,7 @@
   /* background: rgba(255, 255, 255, 0.1); */
   backdrop-filter: blur(16px);
   color: rgb(255, 254, 226);
+  height: 700px;
 }
 
 

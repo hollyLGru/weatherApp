@@ -17,7 +17,6 @@ const [celcius, setCelcius] = useState(false);
     };
     const timeString = date.toLocaleString('en-US', options);
 
-console.log(weather)
 
 const handleClickC = () => {
     setCelcius(true)
