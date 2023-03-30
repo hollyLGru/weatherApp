@@ -1,16 +1,31 @@
 import { useState, useEffect } from 'react';
 import '../App.css';
-import TextField from '@mui/material/TextField';
+import { TextField } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
+import { alpha, styled } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import axios from 'axios';
 
 
-
 function Forms() {
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#0971f1',
+        darker: '#053e85',
+      },
+      neutral: {
+        main: 'white',
+        contrastText: '#fff',
+      },
+    },
+  });
+
   const [submitted, setSubmitted] = useState(false)
   const [state, setState] = useState({
     firstName: "",
@@ -56,7 +71,6 @@ function Forms() {
     // text but I really wanted to give an example of how it were to look if this were a functional form. 
     // I do not know typescript, so I used axios to make the post request. 
 
-
   return (
 
     <div className="Forms">
@@ -68,26 +82,28 @@ function Forms() {
 
       {submitted == false ?
       <div>
+        <ThemeProvider theme={theme}>
         <div style={{ width: '90%', margin: 'auto', display: "flex", justifyConent: 'space eveninly', marginTop: "3%"}}>
-          <TextField onChange={handleTextChange} value={state.firstName} sx={{m:1, width: '50%'}} id="standard-basic" label="First Name" variant="standard" />
-          <TextField onChange={handleTextChange} value={state.lastName} sx={{m:1, width: '50%'}} id="standard-basic" label="Last Name" variant="standard" />
+          <TextField onChange={handleTextChange} value={state.firstName} color="neutral" sx={{m:1, width: '50%'}} id="standard-basic" label="First Name" variant="standard" />
+          <TextField onChange={handleTextChange} value={state.lastName} color="neutral" sx={{m:1, width: '50%'}} id="standard-basic" label="Last Name" variant="standard" />
         </div>
         <div style={{ width: '90%', margin: 'auto', display: "flex", justifyConent: 'space eveninly', marginTop: "3%"}}>
-          <TextField onChange={handleTextChange} value={state.email} id="standard-basic" label="Email Address" variant="standard"  sx={{m:1, width: '100%'}}/>
+          <TextField onChange={handleTextChange} value={state.email} color="neutral" id="standard-basic" label="Email Address" variant="standard"  sx={{m:1, width: '100%'}}/>
         </div>
 
         <div style={{ width: '90%',  margin: 'auto', marginTop: '10%'}}>
           <h3>Address:</h3>
-          <TextField onChange={handleTextChange} value={state.address} id="standard-basic" label="Address" variant="standard"  sx={{m:1, width: '100%'}}/>
-          <TextField onChange={handleTextChange} value={state.city} id="standard-basic" label="City" variant="standard" sx={{ m: 1, minWidth: "50%" }} />
+          <TextField onChange={handleTextChange} value={state.address} color="neutral" id="standard-basic" label="Address" variant="standard"  sx={{m:1, width: '100%'}}/>
+          <TextField onChange={handleTextChange} value={state.city} color="neutral" id="standard-basic" label="City" variant="standard" sx={{ m: 1, minWidth: "50%" }} />
             <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-              <InputLabel id="demo-simple-select-label">State</InputLabel>
+              <InputLabel id="demo-simple-select-label" color="neutral">State</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={state.region}
                 label="State"
                 onChange={handleTextChange}
+                color="neutral"
               >
               <option value="">Select state</option>
                 <MenuItem value="AL">Alabama</MenuItem>
@@ -142,15 +158,16 @@ function Forms() {
                 <MenuItem value="WY">Wyoming</MenuItem>
               </Select>
             </FormControl>
-            <TextField onChange={handleTextChange} value={state.zip} id="standard-basic" label="Zip Code" variant="standard"  sx={{ m: 1, minWidth: '120' }} />
+            <TextField color="neutral" onChange={handleTextChange} value={state.zip} id="standard-basic" label="Zip Code" variant="standard"  sx={{ m: 1, minWidth: '120' }} />
         </div> 
         <div style={{ width: '90%',  margin: 'auto', display: 'flex', justifyContent: 'space-evenly', marginTop: "5%"}}>
-          <Button onClick={handleSubmit} type="submit" variant="outlined">Submit</Button>
+          <Button sx={{color: "white", border: "1pt solid white"}} theme={theme} onClick={handleSubmit} type="submit" variant="outlined">Submit</Button>
         </div>
+        </ThemeProvider>
       </div>
       : 
       <div style={{marginTop: '30%',textAlign: 'center'}}>
-        <p>Thank you for your submission. We will contact you shortly</p>
+        <p>Thank you for your submission. We will contact you shortly.</p>
       </div>
       }
     </div>
