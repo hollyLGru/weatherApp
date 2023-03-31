@@ -11,7 +11,7 @@ import Mobile from '../components/Mobile'
 // import axios from 'axios';
 
 
-function FormsMobile() {
+function FormsMobile({connected, setConnected}) {
 
   const theme = createTheme({
     palette: {
@@ -50,6 +50,7 @@ function FormsMobile() {
   const handleSubmit = (e) => {
     setSubmitted(true);
     console.log(submitted);
+    setConnected(false)
     // axios.post('ADDRESSTOENDPOINTHERE', {
     //   firstName: state.firstName,
     //   lastName: state.lastName,

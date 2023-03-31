@@ -75,7 +75,7 @@ function Mobile({weather, location, timeString}) {
             </div>
         </div>
         </div>
-        : <FormsMobile/>}
+        : <FormsMobile connected={connected}  setConnected={setConnected}/>}
     </div>
   )
 }
