@@ -6,26 +6,18 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import Forms from './Forms'
 
-function Desktop({latitude, longitude, locationFound,setWeatherData, setLocation, weather, location}) {
+function Desktop({weather, location, timeString}) {
 const [celcius, setCelcius] = useState(false);
-
-    const date = new Date();
-    const options = {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true
-    };
-    const timeString = date.toLocaleString('en-US', options);
-
 
 const handleClickC = () => {
     setCelcius(true)
 }
+// will toggle to celcius 
 
 const handleClickF = () => {
     setCelcius(false)
 }
-
+// will toggle to farenheit
 
   return (
     <div>

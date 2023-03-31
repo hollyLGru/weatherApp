@@ -74,3 +74,46 @@
 
 
 
+
+.Mobile{
+  margin: auto;
+  background-image: url(backgroundImage.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 95%;
+  font-family: 'Roboto', sans-serif; 
+  color: white;
+  border-radius: 25px;
+}
+
+.tempMobile{
+  opacity: .80;
+  margin-top: 15%;
+}
+
+.currentMobile{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15%;
+  width: 60%;
+  margin: 10%;
+}
+
+.currentMobile p {
+  font-size: 75%;
+}
+
+.FormsMobile {
+  width: 100%;
+  color: white;
+  border-radius: 25px;
+  background-image: url(backgroundImage.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.LetsConnectMobile:hover {
+  color: purple;
+  cursor: pointer;
+}
+

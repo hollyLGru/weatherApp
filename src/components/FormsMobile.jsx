@@ -2,30 +2,26 @@ import { useState, useEffect } from 'react';
 import '../App.css';
 import { TextField } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
-import { alpha, styled } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Mobile from '../components/Mobile'
 // import axios from 'axios';
 
 
-function Forms() {
+function FormsMobile() {
 
   const theme = createTheme({
     palette: {
-      primary: {
-        main: '#0971f1',
-        darker: '#053e85',
-      },
       neutral: {
         main: 'white',
         contrastText: '#fff',
       },
     },
   });
-  // Material Ui Theme
+//   MAterial Ui Theme
 
   const [submitted, setSubmitted] = useState(false)
   const [state, setState] = useState({
@@ -37,7 +33,7 @@ function Forms() {
     region: '',
     zip: ''
   })
-  // sets form values to state
+//   sets value of forms as state 
 
   const handleTextChange = (e) => {
     const { name, value } = e.target;
@@ -75,12 +71,8 @@ function Forms() {
 
   return (
 
-    <div className="Forms">
-      <div style={{ width: '70%', borderBottom: "1pt solid white", margin: 'auto'}}>
-      <h1 style={{textAlign:"center", letterSpacing: '.2rem' }}>
-        Lets Connect.
-      </h1>
-    </div>
+    <div className="FormsMobile">
+        <div style={{ backdropFilter: 'blur(16px)'}}>
 
       {submitted == false ?
       <div>
@@ -168,12 +160,11 @@ function Forms() {
         </ThemeProvider>
       </div>
       : 
-      <div style={{marginTop: '30%',textAlign: 'center'}}>
-        <p>Thank you for your submission. We will contact you shortly.</p>
-      </div>
+        <Mobile/>
       }
+      </div>
     </div>
   )
 }
 
-export default Forms
+export default FormsMobile
