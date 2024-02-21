@@ -1,5 +1,7 @@
 # weatherApp
 
+https://hollylgru.github.io/weatherApp/
+
 <img width="940" alt="blurred" src="https://user-images.githubusercontent.com/91293977/229559954-e80a50fa-06f7-4a55-9902-82178d875fd9.png">
 
 This application was built using Vite js framework. It is a front end application that pinpoints the user's latitude and longitude and returns the current weather
